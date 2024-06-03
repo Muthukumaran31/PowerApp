@@ -9,22 +9,7 @@ testSuite:
   onTestSuiteComplete: ""
   networkRequestMocks: 
   testCases:
-  - testCaseName: Positive Scenarios
-    testCaseDescription: ''
-    testSteps: |
-      = 
-      Select(Button1);
-      SetProperty(Userinput.Text, "Muthu");
-      Assert(Userinput.Text= "Muthu");
-      SetProperty(Leaveinput.Text, "sick");
-      SetProperty(Phoneinput.Text, "1234");
-      Select(SaveButton);
-      Select(SaveButton_1);
-      Select(Icon5);
-      Select(Icon2);
-      Select(Icon5);
-      Select(Icon1);
-  - testCaseName: Negative Scenarios
+  - testCaseName: Negative Scenarios for UserName
     testCaseDescription: ''
     testSteps: |
       = 
@@ -39,6 +24,49 @@ testSuite:
       Select(Icon2);
       Select(Icon5);
       Select(Icon1);
+  - testCaseName: Negative Scenarios for ExitScreen
+    testCaseDescription: ''
+    testSteps: |
+      = 
+      SetProperty(Userinput.Text, "Kumaran");
+      Assert(Userinput.Text= "Kumaran");
+      SetProperty(Leaveinput.Text, "CasualLeave");
+      SetProperty(Phoneinput.Text, "5678");
+      Select(SaveButton);
+      Select(SaveButton_1);
+      Select(Icon5);
+      Assert(ExitScreen.Text="Good Bye");
+      Select(Icon2);
+  - testCaseName: HomeScreen
+    testCaseDescription: ''
+    testSteps: |
+      = 
+      Assert(Label1.Text="Welcome to Attendace App MK");
+      Select(Button1);
+  - testCaseName: LoginPage
+    testCaseDescription: ''
+    testSteps: |
+      = 
+      Assert(Label1_1.Text="User info screen");
+  - testCaseName: ExitScreen
+    testCaseDescription: ''
+    testSteps: |
+      = 
+      Assert(ExitScreen.Text="Thanks for visiting the site");
+      Select(Icon2);
+      Select(Icon5);
+      Select(Icon1);
+  - testCaseName: Positive Sceanios
+    testCaseDescription: ''
+    testSteps: |
+      = 
+      SetProperty(Userinput.Text, "Muthu");
+      Assert(Userinput.Text= "Muthu");
+      SetProperty(Leaveinput.Text, "sick");
+      SetProperty(Phoneinput.Text, "1234");
+      Select(SaveButton);
+      Select(SaveButton_1);
+      Select(Icon5);
 testSettings:
   filePath: 
   browserConfigurations:
